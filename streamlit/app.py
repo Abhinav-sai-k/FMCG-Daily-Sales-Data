@@ -44,10 +44,10 @@ except FileNotFoundError:
 
 
 # Load model with best svaed weights
-model_huber.load_state_dict(torch.load("best_regression_model_huber.pth"))
+model_huber.load_state_dict(torch.load("best_regression_model_huber.pth",map_location = torch.device(device)))
 model_huber.eval()
 
-model_mse.load_state_dict(torch.load('best_regression_model_mse.pth'))
+model_mse.load_state_dict(torch.load('best_regression_model_mse.pth',map_location = torch.device(device)))
 model_mse.eval()
 
 # Input features
